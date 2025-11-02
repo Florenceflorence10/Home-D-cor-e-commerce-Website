@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Your Cart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="track.html">Track Order</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="cart-items"></div>
+    <p id="cart-total"></p>
+    <button id="checkout-btn" class="btn">Place Order</button>
+    <p id="order-message"></p>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    displayCart();
+  </script>
+
+
+<script>
+  document.getElementById("checkoutBtn").addEventListener("click", () => {
+    const userEmail = localStorage.getItem("userEmail");
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    // Check if there are items in the cart
+    if (cartItems.length === 0) {
+      alert("Your cart is empty. Add some décor items first!");
+      return;
+    }
+
+    // If not signed in, ask them to sign in
+    if (!userEmail) {
+      alert("Please sign in to continue to checkout.");
+      window.location.href = "login.html";
+      return;
+    }
+
+    // If signed in and has items, go to payment page
+    window.location.href = "checkout.html";
+  });
+</script>
+
+</body>
+</html>
