@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flores Decor | M-Pesa Payment</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff5f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .checkout-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+    }
+    h2 {
+      color: #e91e63;
+      margin-bottom: 15px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+    button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+    button:hover {
+      background-color: #c2185b;
+    }
+    #status {
+      margin-top: 15px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="checkout-box">
+    <h2>M-Pesa Payment</h2>
+    <p>Enter your phone number to complete your order 💖</p>
+
+    <input type="tel" id="phone" placeholder="07XXXXXXXX" required><br>
+    <button id="payBtn">Pay Now</button>
+
+    <p id="status"></p>
+  </div>
+
+  <script>
+    document.getElementById("payBtn").addEventListener("click", () => {
+      const phone = document.getElementById("phone").value;
+      const status = document.getElementById("status");
+
+      if (phone.trim() === "" || !phone.startsWith("07") || phone.length !== 10) {
+        status.style.color = "red";
+        status.textContent = "⚠️ Please enter a valid M-Pesa number!";
+        return;
+      }
+
+      status.style.color = "#333";
+      status.textContent = "Processing payment, please wait...";
+
+      // Simulate payment delay
+      setTimeout(() => {
+        status.style.color = "green";
+        status.textContent = "✅ Payment successful! Thank you for shopping with Flores Decor 💕";
+        localStorage.removeItem("cartItems"); // clear the cart
+
+        // Redirect to tracking page after 3 seconds
+        setTimeout(() => {
+          window.location.href = "track.html";
+        }, 3000);
+      }, 2500);
+    });
+  </script>
+
+</body>
+</html>
+
+     
