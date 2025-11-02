@@ -1,0 +1,271 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+header {
+  background: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-display: swap;
+}
+
+nav a {
+  text-decoration:wavy
+  color:red;
+  margin-left: 15px;
+  font-weight:bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 10px;
+}
+
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+#cart-items li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+#track-result {
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* Policy Pages Styling */
+.policy-page {
+  width: 80%;
+  margin: 50px auto;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  color: #333;
+}
+
+.policy-page h2 {
+  color: #d62828; /* 🔴 Red title */
+  margin-bottom: 15px;
+}
+
+.policy-page h3 {
+  color: #a4161a;
+  margin-top: 25px;
+}
+
+.policy-page a {
+  color: #d62828;
+  text-decoration: none;
+}
+
+.policy-page a:hover {
+  text-decoration: underline;
+}
+
+
+/* Contact Page Styling */
+.contact-page {
+  width: 80%;
+  margin: 50px auto;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.contact-page h2 {
+  color: #d62828;
+  margin-bottom: 10px;
+}
+
+.contact-page p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.contact-options {
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  display: inline-block;
+  background-color: #d62828;
+  color: white;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #a4161a;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-form button {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.contact-form button:hover {
+  background-color: #a4161a;
+}
+
+
+/* About Page Styling */
+.about-page {
+  width: 80%;
+  margin: 50px auto;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.8;
+}
+
+.about-page h2 {
+  color: #d62828;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.about-page h3 {
+  color: #a4161a;
+  margin-top: 30px;
+}
+
+.about-page p,
+.about-page li {
+  font-size: 16px;
+}
+
+.about-page ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about-page ul li {
+  margin-bottom: 8px;
+}
+
+.about-page a {
+  color: #d62828;
+  text-decoration: none;
+}
+
+.about-page a:hover {
+  text-decoration: underline;
+}
+
+.about-page .quote {
+  text-align: center;
+  margin-top: 40px;
+  font-style: italic;
+  font-size: 18px;
+  color: #a4161a;
+}
+
+/*Auth & Checkout Styling */
+.auth-page, .checkout-page {
+  width: 80%;
+  margin: 40px auto;
+  max-width: 500px;
+  background: #fff6f6;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(214, 40, 40, 0.2);
+  text-align: center;
+}
+
+.auth-page h2, .checkout-page h2 {
+  color: #d62828;
+}
+
+form label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form button {
+  background: #d62828;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #a4161a;
+}
+
+
+
+
+
