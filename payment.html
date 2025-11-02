@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Decor | Payment Options</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff5f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .payment-box {
+      background: white;
+      width: 420px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+    .option {
+      border: 1px solid #e91e63;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .option:hover {
+      background-color: #ffe4ec;
+    }
+    .hidden {
+      display: none;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+    button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+    button:hover { background-color: #c2185b; }
+    #status { margin-top: 15px; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <div class="payment-box">
+    <h2>Choose Payment Method</h2>
+
+    <div class="option" id="mpesaOption">📱 Pay with M-Pesa</div>
+    <div class="option" id="codOption">💵 Cash on Delivery</div>
+    <div class="option">💳 Card Payment (Coming Soon)</div>
+
+    <div id="mpesaForm" class="hidden">
+      <h3 style="color:#e91e63;">M-Pesa Payment</h3>
+      <input type="tel" id="phone" placeholder="07XXXXXXXX" required><br>
+      <button id="payBtn">Pay Now</button>
+      <p id="status"></p>
+    </div>
+
+    <div id="codMessage" class="hidden">
+      <p>✅ You chose Cash on Delivery. Please have cash ready when your order arrives.</p>
+      <button onclick="window.location.href='track.html'">Confirm Order</button>
+    </div>
+  </div>
+
+  <script>
+    const mpesaOption = document.getElementById("mpesaOption");
+    const codOption = document.getElementById("codOption");
+    const mpesaForm = document.getElementById("mpesaForm");
+    const codMessage = document.getElementById("codMessage");
+    const status = document.getElementById("status");
+
+    // Show M-Pesa form
+    mpesaOption.addEventListener("click", () => {
+      mpesaForm.classList.remove("hidden");
+      codMessage.classList.add("hidden");
+    });
+
+    // Show Cash-on-Delivery message
+    codOption.addEventListener("click", () => {
+      codMessage.classList.remove("hidden");
+      mpesaForm.classList.add("hidden");
+    });
+
+    // Simulate payment
+    document.getElementById("payBtn").addEventListener("click", () => {
+      const phone = document.getElementById("phone").value;
+      if (phone.trim() === "" || !phone.startsWith("07") || phone.length !== 10) {
+        status.style.color = "red";
+        status.textContent = "⚠️ Please enter a valid M-Pesa number!";
+        return;
+      }
+
+      status.style.color = "#333";
+      status.textContent = "Processing payment …";
+
+      setTimeout(() => {
+        status.style.color = "green";
+        status.textContent = "✅ Payment successful! Thank you for shopping with Flores Decor 💕";
+        localStorage.removeItem("cartItems");
+        setTimeout(() => window.location.href = "track.html", 2500);
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>
