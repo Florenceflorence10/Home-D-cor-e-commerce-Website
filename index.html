@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bedroom Décor | Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Florés BloomSpace Décor </h1> 
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart 🛒</a>
+      <a href="track.html">Track Order</a>
+      <a href="login.html">Sign In</a>
+
+    </nav>
+  </header>
+
+   <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h2>Your space should tell your story.</h2>
+    <button>Shop Now</button>
+  </section>
+
+  <!--ABOUT SECTION-->
+  <section id="about" class="about">
+    <h2>Welcome to Florés Décor</h2>
+    <p>
+      Discover timeless pieces that bring comfort, elegance, and warmth to your home.
+      From cozy bedrooms to stylish living spaces we help you create the home you’ve always dreamed of.
+    </p>
+  </section>
+
+  <main>
+    <h2>Style your home,Soothe your soul.</h2>
+    <div class="grid" id="product-list"></div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    displayProducts();
+  </script>
+
+
+<button id="checkoutBtn">Checkout</button>
+<script>
+  // Find the Checkout button
+  document.getElementById("checkoutBtn").addEventListener("click", function() {
+    // Redirect to the payment page
+    window.location.href = "payment.html";
+  });
+</script>
+
+
+</body>
+</html>
+
+
+
+
+<!--Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+    <h3>Florés Décor</h3>
+    <p>Create a space that hugs you back.</p>
+    <div class="footer-links">
+      <a href="#">About Us</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a>
+    </div>
+    <p class="copyright">© 2025 Florés Décor. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  
